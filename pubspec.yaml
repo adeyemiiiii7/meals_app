@@ -63,6 +63,15 @@ flutter:
   assets:
     - assets/images/france.png
     - assets/images/nigerian.png
+    - assets/images/mexican.png
+    - assets/images/summer.png
+    - assets/images/german.png
+    - assets/images/hambuger.png
+    - assets/images/indian.png
+    - assets/images/italy.png
+    - assets/images/british.png
+    
+    
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
