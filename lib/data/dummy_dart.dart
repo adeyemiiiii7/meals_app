@@ -7,12 +7,12 @@ const availableCategories = [
     id: 'c1',
     title: 'Italian',
     color: Colors.red,
-    flagImagePath: '',
+    flagImagePath: 'assets/nigerian.png',
   ),
   Category(
     id: 'c2',
     title: 'Nigerian',
-    flagImagePath: 'assets/nigeria_flag.png',
+    flagImagePath: 'assets/nigerian.png',
   ),
   Category(
     id: 'c3',
