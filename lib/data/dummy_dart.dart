@@ -10,7 +10,7 @@ const availableCategories = [
   ),
   Category(
     id: 'c2',
-    title: 'Quick & Easy',
+    title: 'Nigerian',
     color: Colors.green,
   ),
   Category(
@@ -31,11 +31,11 @@ const availableCategories = [
   Category(
     id: 'c6',
     title: 'Exotic',
-    color: Colors.green,
+    color: Color.fromARGB(255, 101, 76, 175),
   ),
   Category(
     id: 'c7',
-    title: 'Breakfast',
+    title: 'Breakfast(British)',
     color: Colors.lightBlue,
   ),
   Category(
@@ -51,6 +51,16 @@ const availableCategories = [
   Category(
     id: 'c10',
     title: 'Summer',
+    color: Colors.teal,
+  ),
+  Category(
+    id: 'c11',
+    title: 'Mexican',
+    color: Color.fromARGB(255, 176, 37, 37),
+  ),
+  Category(
+    id: 'c12',
+    title: 'Indian',
     color: Colors.teal,
   ),
 ];
