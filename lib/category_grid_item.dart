@@ -17,12 +17,11 @@ class CategoryGridItem extends StatelessWidget {
       child: Container(
         padding: const EdgeInsets.all(15),
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(15),
+          borderRadius: BorderRadius.circular(20),
           image: DecorationImage(
-            opacity: 0.85,
-            image: AssetImage(category.flagImagePath!),
-            fit: BoxFit.cover,
-          ),
+              opacity: 0.85,
+              image: AssetImage(category.flagImagePath!),
+              fit: BoxFit.fill),
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
