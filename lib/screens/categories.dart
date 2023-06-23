@@ -3,10 +3,12 @@ import 'package:meals_app/category_grid_item.dart';
 import 'package:meals_app/data/dummy_dart.dart';
 import 'package:meals_app/screens/meals.dart';
 
+import '../models/category.dart';
+
 class CategoriesScreen extends StatelessWidget {
   const CategoriesScreen({super.key});
 
-  void _selectCategory(BuildContext context) {
+  void _selectCategory(BuildContext context, Category category) {
     //pass contxt as a value
     Navigator.of(context).push(MaterialPageRoute(
       builder: (ctx) => const MealsScreen(
