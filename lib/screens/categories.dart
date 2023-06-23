@@ -4,20 +4,24 @@ import 'package:meals_app/data/dummy_dart.dart';
 import 'package:meals_app/screens/meals.dart';
 
 import '../models/category.dart';
+import '../models/meal.dart';
 
 class CategoriesScreen extends StatelessWidget {
   const CategoriesScreen({super.key});
 
   void _selectCategory(BuildContext context, Category category) {
-    dummyMeals.where((element) => false);
-    //pass contxt as a value
-    Navigator.of(context).push(MaterialPageRoute(
-      builder: (ctx) => const MealsScreen(
-        title: 'Titles...',
-        meals: [],
+    final selectedMeals = dummyMeals
+        .where((meal) => meal.categories.contains(category.id))
+        .toList();
+
+    Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (ctx) => MealsScreen(
+          title: category.title,
+          meals: selectedMeals,
+        ),
       ),
-    ));
-    //Navigator.push(context, Route);
+    );
   }
 
   @override
