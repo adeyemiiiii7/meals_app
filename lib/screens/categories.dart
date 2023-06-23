@@ -34,10 +34,10 @@ class CategoriesScreen extends StatelessWidget {
             for (final category in availableCategories)
               CategoryGridItem(
                 category: category,
-                onSelectCategory: () {
+                onselectCategory: () {
                   _selectCategory(context);
                 },
-                onselectCategory: () {},
+                //  onselectCategory: () {},
               )
           ],
         ));
