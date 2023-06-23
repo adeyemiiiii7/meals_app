@@ -1,5 +1,3 @@
-import 'package:flutter/material.dart';
-
 import '../models/meal.dart';
 import '/models/category.dart';
 
@@ -264,7 +262,7 @@ const dummyMeals = [
     isLactoseFree: false,
   ),
   Meal(
-    id: 'm4',
+    id: 'm5',
     categories: [
       'c3',
       'c6',
@@ -337,7 +335,7 @@ const dummyMeals = [
     isLactoseFree: true,
   ),
   Meal(
-    id: 'm7',
+    id: 'm6',
     categories: [
       'c3'
           'c6'
@@ -370,7 +368,7 @@ const dummyMeals = [
     isLactoseFree: false,
   ),
   Meal(
-    id: 'm8',
+    id: 'm7',
     categories: ['c4'],
     title: 'Grilled Bratwurst',
     affordability: Affordability.affordable,
@@ -396,7 +394,7 @@ const dummyMeals = [
     isLactoseFree: true,
   ),
   Meal(
-    id: 'm9',
+    id: 'm8',
     categories: [
       'c11',
     ],
@@ -429,7 +427,7 @@ const dummyMeals = [
     isLactoseFree: true,
   ),
   Meal(
-    id: 'm10',
+    id: 'm9',
     categories: [
       'c9',
     ],
@@ -478,7 +476,7 @@ const dummyMeals = [
     isLactoseFree: false,
   ),
   Meal(
-    id: 'm11',
+    id: 'm10',
     categories: [
       'c5',
     ],
@@ -507,7 +505,7 @@ const dummyMeals = [
     isLactoseFree: true,
   ),
   Meal(
-    id: 'm12',
+    id: 'm11',
     categories: [
       'c7',
     ],
@@ -550,7 +548,7 @@ const dummyMeals = [
     isLactoseFree: true,
   ),
   Meal(
-    id: 'm13',
+    id: 'm12',
     categories: [
       'c12',
     ],
