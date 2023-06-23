@@ -9,6 +9,7 @@ class CategoriesScreen extends StatelessWidget {
   const CategoriesScreen({super.key});
 
   void _selectCategory(BuildContext context, Category category) {
+    dummyMeals.where((element) => false);
     //pass contxt as a value
     Navigator.of(context).push(MaterialPageRoute(
       builder: (ctx) => const MealsScreen(
