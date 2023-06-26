@@ -10,7 +10,7 @@ final theme = ThemeData(
   useMaterial3: true,
   colorScheme: ColorScheme.fromSeed(
     brightness: Brightness.dark,
-    seedColor: const Color.fromARGB(255, 47, 56, 223),
+    seedColor: const Color.fromARGB(120, 109, 177, 246),
   ),
   textTheme: GoogleFonts.poppinsTextTheme(),
 );
@@ -34,3 +34,34 @@ class App extends StatelessWidget {
         );
   }
 }
+//           const SizedBox(height: 18),
+//           Padding(
+//             padding: const EdgeInsets.symmetric(horizontal: 16),
+//             child: Text(
+//               'Steps',
+//               style: Theme.of(context).textTheme.titleLarge!.copyWith(
+//                     color: Theme.of(context).colorScheme.primary,
+//                     fontWeight: FontWeight.bold,
+//                   ),
+//             ),
+//           ),
+//           const SizedBox(height: 14),
+//           for (final step in meal.steps)
+//             Padding(
+//               padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
+//               child: ListTile(
+//                 leading: Icon(Icons.circle,
+//                     color: Theme.of(context).colorScheme.primary),
+//                 title: Text(
+//                   step,
+//                   textAlign: TextAlign.center,
+//                   style: TextStyle(
+//                       color: Theme.of(context).colorScheme.onBackground),
+//                 ),
+//               ),
+//             ),
+//         ],
+//       ),
+//     );
+//   }
+// }

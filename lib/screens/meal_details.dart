@@ -97,7 +97,7 @@ class MealDetails extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                 ),
           ),
-          const SizedBox(height: 14),
+          const SizedBox(height: 11),
           for (final ingredient in meal.ingredients)
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
@@ -106,7 +106,10 @@ class MealDetails extends StatelessWidget {
                 children: [
                   const Text(
                     '• ',
-                    style: TextStyle(fontSize: 16),
+                    style: TextStyle(
+                      fontSize: 16,
+                      color: Colors.white,
+                    ),
                   ),
                   Expanded(
                     child: Text(
@@ -118,16 +121,16 @@ class MealDetails extends StatelessWidget {
                 ],
               ),
             ),
-          const SizedBox(height: 18),
+          const SizedBox(height: 11),
           Text(
             'Steps',
-            textAlign: TextAlign.justify,
+            textAlign: TextAlign.start,
             style: Theme.of(context).textTheme.titleLarge!.copyWith(
                   color: Theme.of(context).colorScheme.primary,
                   fontWeight: FontWeight.bold,
                 ),
           ),
-          const SizedBox(height: 14),
+          const SizedBox(height: 11),
           for (int i = 0; i < meal.steps.length; i++)
             Padding(
               padding: const EdgeInsets.fromLTRB(16, 4, 8, 4),
@@ -136,9 +139,10 @@ class MealDetails extends StatelessWidget {
                 children: [
                   Text(
                     '${i + 1}. ',
-                    style: GoogleFonts.poppins(
-                      fontSize: 19,
-                      fontWeight: FontWeight.bold,
+                    style: GoogleFonts.notoSans(
+                      fontSize: 15,
+                      fontWeight: FontWeight.w500,
+                      color: Colors.white,
                     ),
                   ),
                   Expanded(
