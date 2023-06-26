@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:meals_app/models/meal.dart';
+import 'package:meals_app/screens/meal_details.dart';
 import 'package:meals_app/widgets/meal_item_trait.dart';
 import 'package:transparent_image/transparent_image.dart';
 
@@ -8,9 +9,12 @@ class MealItem extends StatelessWidget {
   const MealItem({
     super.key,
     required this.meal,
+    required this.onselectMeal,
   });
 
   final Meal meal;
+  final void Function(Meal meal) onselectMeal;
+
   String get ComplexityText {
     return meal.complexity.name[0].toUpperCase() +
         meal.complexity.name.substring(1);
@@ -31,7 +35,9 @@ class MealItem extends StatelessWidget {
       clipBehavior: Clip.hardEdge,
       elevation: 1.5,
       child: InkWell(
-        onTap: () {},
+        onTap: () {
+          onselectMeal(meal);
+        },
         child: Stack(
           children: [
             FadeInImage(
