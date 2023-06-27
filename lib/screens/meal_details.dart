@@ -79,7 +79,10 @@ class MealDetails extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(meal.title),
+        title: Text(
+          meal.title,
+          style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w300),
+        ),
       ),
       body: ListView(
         children: [
