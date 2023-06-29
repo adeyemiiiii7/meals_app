@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:meals_app/screens/categories.dart';
 //import 'package:meals_app/screens/categories.dart';
 import 'package:meals_app/screens/tabs.dart';
 //import 'package:meals_app/screens/meals.dart';
@@ -24,12 +25,14 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        debugShowCheckedModeBanner: false, theme: theme, home: categ
-        // const TabsScreen(),
-        // MealsScreen(
-        //   title: 'Some Category',
-        //   meals: dummyMeals,
-        // ),
-        );
+      debugShowCheckedModeBanner: false, theme: theme,
+      home: const TabsScreen(),
+      // const CategoriesScreen()
+
+      // MealsScreen(
+      //   title: 'Some Category',
+      //   meals: dummyMeals,
+      // ),
+    );
   }
 }
