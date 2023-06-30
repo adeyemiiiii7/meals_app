@@ -83,6 +83,12 @@ class MealDetails extends StatelessWidget {
           meal.title,
           style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w300),
         ),
+        actions: [
+          IconButton(
+            onPressed: () {},
+            icon: const Icon(Icons.star),
+          ),
+        ],
       ),
       body: ListView(
         children: [
