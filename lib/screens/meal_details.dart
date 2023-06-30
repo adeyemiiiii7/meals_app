@@ -4,9 +4,11 @@ import 'package:google_fonts/google_fonts.dart';
 import '../models/meal.dart';
 
 class MealDetails extends StatelessWidget {
-  const MealDetails({super.key, required this.meal});
+  const MealDetails(
+      {super.key, required this.meal, required this.onToggleFavourite});
 
   final Meal meal;
+  final void Function(Meal meal) onToggleFavourite;
 
 //   @override
 //   Widget build(BuildContext context) {
@@ -85,7 +87,9 @@ class MealDetails extends StatelessWidget {
         ),
         actions: [
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              onToggleFavourite(meal);
+            },
             icon: const Icon(Icons.star),
           ),
         ],
