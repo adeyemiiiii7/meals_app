@@ -26,9 +26,13 @@ class _TabsScreenState extends State<TabsScreen> {
     if (isExisting) {
       setState(() {
         _favouriteMeals.remove(meal);
+        _showInfoMessgae('Meal is no longer a favourite');
       });
     } else {
-      _favouriteMeals.add(meal);
+      setState(() {
+        _favouriteMeals.add(meal);
+        _showInfoMessgae('Marked as a favourite.');
+      });
     }
   }
 
