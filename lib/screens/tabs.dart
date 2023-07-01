@@ -47,6 +47,15 @@ class _TabsScreenState extends State<TabsScreen> {
     });
   }
 
+  void _setScreen(String identifier) {
+    if (identifier == 'filters') {
+    } else {
+      //Navigator.pop(context).pop();
+      Navigator.pop(context).pop();
+      return;
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     Widget activePage = CategoriesScreen(
@@ -61,7 +70,9 @@ class _TabsScreenState extends State<TabsScreen> {
       activePageTitle = "Favourites";
     }
     return Scaffold(
-      drawer: const MainDrawer(),
+      drawer: MainDrawer(
+        onSelectScreen: _setScreen,
+      ),
       appBar: AppBar(
         title: const Text('Categories'),
       ),
