@@ -11,7 +11,7 @@ final theme = ThemeData(
   useMaterial3: true,
   colorScheme: ColorScheme.fromSeed(
     brightness: Brightness.dark,
-    seedColor: const Color.fromARGB(120, 26, 126, 225),
+    seedColor: const Color.fromARGB(120, 89, 136, 184),
   ),
   textTheme: GoogleFonts.poppinsTextTheme(),
 );
