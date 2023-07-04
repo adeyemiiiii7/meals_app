@@ -84,7 +84,9 @@ class _TabsScreenState extends State<TabsScreen> {
       //ading a generic bracket to the push to specify what of values will be stored there
       final result = await Navigator.of(context).push<Map<Filter, bool>>(
         MaterialPageRoute(
-          builder: (ctx) => const FiltersScreen(),
+          builder: (ctx) => FiltersScreen(
+            currentFilters: _selectedFilters,
+          ),
         ),
       );
       setState(() {
