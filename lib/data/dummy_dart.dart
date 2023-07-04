@@ -331,7 +331,7 @@ const dummyMeals = [
     ],
     isGlutenFree: true,
     isVegan: false,
-    isVegetarian: true,
+    isVegetarian: false,
     isLactoseFree: true,
   ),
   Meal(
@@ -545,7 +545,7 @@ const dummyMeals = [
     ],
     isGlutenFree: false,
     isVegan: true,
-    isVegetarian: true,
+    isVegetarian: false,
     isLactoseFree: true,
   ),
   Meal(
