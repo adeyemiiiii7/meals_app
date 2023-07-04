@@ -3,8 +3,9 @@ import 'package:flutter/material.dart';
 enum Filter { glutenFree, LactoseFree, Vegetarian, vegan }
 
 class FiltersScreen extends StatefulWidget {
-  const FiltersScreen({super.key});
+  const FiltersScreen({super.key, required this.currentFilters});
 
+  final Map<Filter, bool> currentFilters;
   @override
   State<FiltersScreen> createState() => _FiltersScreenState();
 }
@@ -12,8 +13,23 @@ class FiltersScreen extends StatefulWidget {
 class _FiltersScreenState extends State<FiltersScreen> {
   var _glutenFreeFilterSet = false;
   var _lactoseFreeFilterSet = false;
+  //we can't declare  it like that cause it's is in our state function
+  //var _lactoseFreeFilterSet = currentFilters;
   var _vegetarianFilterSet = false;
   var _veganFilterSet = false;
+
+  @override
+//    This method is called when the stateful widget is inserted into the tree. It's a lifecycle method in Flutter.
+// super.initState();: Calling the superclass's initState() method. It ensures that the superclass's implementation of
+//  initState() is executed before the overridden code.
+  void initState() {
+    super.initState();
+    // Initializing filter variables based on current filters
+    _glutenFreeFilterSet = widget.currentFilters[Filter.glutenFree]!;
+    _lactoseFreeFilterSet = widget.currentFilters[Filter.LactoseFree]!;
+    _vegetarianFilterSet = widget.currentFilters[Filter.Vegetarian]!;
+    _veganFilterSet = widget.currentFilters[Filter.vegan]!;
+  }
 
   @override
   Widget build(BuildContext context) {
