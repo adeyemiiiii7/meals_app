@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:meals_app/data/dummy_dart.dart';
 import 'package:meals_app/models/meal.dart';
@@ -7,7 +5,9 @@ import 'package:meals_app/screens/categories.dart';
 import 'package:meals_app/screens/filters.dart';
 import 'package:meals_app/screens/meals.dart';
 import 'package:meals_app/screens/main_drawer.dart';
-import 'dart:developer';
+//import 'dart:developer';
+import 'package:meals_app/providers/meal_provider.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 //naming the filters as aglobal variable to be accessed by selectedfilters in setstate
 const IntialFilters = {
@@ -17,14 +17,14 @@ const IntialFilters = {
   Filter.glutenFree: false,
 };
 
-class TabsScreen extends StatefulWidget {
+class TabsScreen extends ConsumerStatefulWidget {
   const TabsScreen({super.key});
 
   @override
-  State<TabsScreen> createState() => _TabsScreenState();
+  ConsumerState<TabsScreen> createState() => _TabsScreenState();
 }
 
-class _TabsScreenState extends State<TabsScreen> {
+class _TabsScreenState extends ConsumerState<TabsScreen> {
   //a list map variable that will manage the state of the favourite b=icon
   final List<Meal> _favouriteMeals = [];
   //declare a variable that will store the selected filtered meals
@@ -100,8 +100,11 @@ class _TabsScreenState extends State<TabsScreen> {
 
   @override
   Widget build(BuildContext context) {
-    //using a where function(meal) helps to check dynically in a list
-    final avaliableMeals = dummyMeals.where(
+    //using a riverpod provider where dummymeals is now stored
+    final meals = ref.watch(mealsProvider);
+    final avaliableMeals = meals.where(
+      //using a where function(meal) helps to check dynically in a list
+      //final avaliableMeals = dummyMeals.where(
       (meal) {
         // Filtering meals based on selected filters
         // If the 'glutenFree' filter is enabled and the meal is not gluten-free, exclude it from the list
