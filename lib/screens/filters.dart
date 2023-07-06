@@ -4,9 +4,13 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../providers/filters_provider.dart';
 
 class FiltersScreen extends ConsumerStatefulWidget {
-  const FiltersScreen({super.key, required this.currentFilters});
+  const FiltersScreen({
+    super.key,
+    required Map<Filter, bool> activeFilters,
+    //required this.currentFilters
+  });
 
-  final Map<Filter, bool> currentFilters;
+  // final Map<Filter, bool> currentFilters;
   @override
   ConsumerState<FiltersScreen> createState() => _FiltersScreenState();
 }
@@ -25,11 +29,16 @@ class _FiltersScreenState extends ConsumerState<FiltersScreen> {
 //  initState() is executed before the overridden code.
   void initState() {
     super.initState();
+    // The read method is used when you only need to read the current value of a provider once.
+    //  It returns the current state of the provider without subscribing to future changes.
+    // the watch method is used when you want to subscribe to future changes of a provider and update the UI accordingly.
+    //  It creates a subscription to the provider and triggers a rebuild whenever the provider's state changes.
+    final activeFilters = ref.read(filtersProvider);
     // Initializing filter variables based on current filters
-    _glutenFreeFilterSet = widget.currentFilters[Filter.glutenFree]!;
-    _lactoseFreeFilterSet = widget.currentFilters[Filter.LactoseFree]!;
-    _vegetarianFilterSet = widget.currentFilters[Filter.Vegetarian]!;
-    _veganFilterSet = widget.currentFilters[Filter.vegan]!;
+    _glutenFreeFilterSet = activeFilters[Filter.glutenFree]!;
+    _lactoseFreeFilterSet = activeFilters[Filter.LactoseFree]!;
+    _vegetarianFilterSet = activeFilters[Filter.Vegetarian]!;
+    _veganFilterSet = activeFilters[Filter.vegan]!;
   }
 
   @override
@@ -52,12 +61,13 @@ class _FiltersScreenState extends ConsumerState<FiltersScreen> {
       // ),
       body: WillPopScope(
         onWillPop: () async {
-          Navigator.of(context).pop({
+          ref.read(filtersProvider.notifier).setFilters({
             Filter.glutenFree: _glutenFreeFilterSet,
             Filter.LactoseFree: _lactoseFreeFilterSet,
             Filter.Vegetarian: _vegetarianFilterSet,
             Filter.vegan: _veganFilterSet,
           });
+          Navigator.of(context).pop();
           return false;
         },
         child: Column(
