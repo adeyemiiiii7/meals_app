@@ -6,7 +6,7 @@ import '../providers/filters_provider.dart';
 class FiltersScreen extends ConsumerStatefulWidget {
   const FiltersScreen({
     super.key,
-    required Map<Filter, bool> ,
+    //required MapFilter, bool> ,
     //required this.currentFilters
   });
 
@@ -67,7 +67,7 @@ class _FiltersScreenState extends ConsumerState<FiltersScreen> {
             Filter.Vegetarian: _vegetarianFilterSet,
             Filter.vegan: _veganFilterSet,
           });
-         // Navigator.of(context).pop();
+          // Navigator.of(context).pop();
           return true;
         },
         child: Column(

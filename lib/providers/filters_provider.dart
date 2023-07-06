@@ -13,6 +13,16 @@ class FiltersNotifier extends StateNotifier<Map<Filter, bool>> {
           Filter.Vegetarian: false,
           Filter.vegan: false,
         });
+  void setFilters(Map<Filter, bool> chosenFilters) {
+    state = chosenFilters;
+  }
+// setFilters can directly mutate the state because it assigns the
+// chosenFilters map to the state variable. This operation
+// replaces the entire state with the new chosen filters.
+
+// On the other hand, the second function setFilter cannot directly
+//  mutate the state because it only needs to update
+//  a single filter within the state map.
   void setFilter(Filter filter, bool isActive) {
     //state[filter] = isActive// now allowed => mutating state
     state = {
