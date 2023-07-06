@@ -11,6 +11,8 @@ import 'package:meals_app/providers/meal_provider.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:meals_app/providers/meal_provider.dart';
 
+import '../providers/filters_provider.dart';
+
 //naming the filters as aglobal variable to be accessed by selectedfilters in setstate
 const IntialFilters = {
   Filter.LactoseFree: false,
