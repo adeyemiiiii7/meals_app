@@ -1,4 +1,5 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:meals_app/providers/meal_provider.dart';
 
 import 'filters_provider.dart';
 
@@ -41,3 +42,28 @@ final filtersProvider =
     StateNotifierProvider<FiltersNotifier, Map<Filter, bool>>((ref) {
   return FiltersNotifier();
 });
+
+final filteredMealsProvider = Provider((ref)){
+  final meals = ref.watch(mealsProvider);
+  final activeFilters = ref.watch(filtersProvider);
+ return meals.where((meal) {
+        if (activeFilters[Filter.glutenFree]! && !meal.isGlutenFree) {
+          return false;
+        }
+        if (activeFilters[Filter.LactoseFree]! && !meal.isLactoseFree) {
+          return false;
+        }
+        if (activeFilters[Filter.vegan]! && !meal.isVegan) {
+          return false;
+        }
+        if (activeFilters[Filter.Vegetarian]! && !meal.isVegetarian) {
+          return false;
+        }
+        return true;
+        //.toList() at the end of where() converts the filtered meals from an iterable to a list,
+        //making it more convenient to work with the data in various ways.
+      },
+    ).toList();
+
+
+};
