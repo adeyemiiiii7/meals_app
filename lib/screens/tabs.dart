@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:meals_app/data/dummy_dart.dart';
-import 'package:meals_app/models/meal.dart';
+// import 'package:meals_app/data/dummy_dart.dart';
+// import 'package:meals_app/models/meal.dart';
 import 'package:meals_app/providers/favorites_provider.dart';
 import 'package:meals_app/screens/categories.dart';
 import 'package:meals_app/screens/filters.dart';
 import 'package:meals_app/screens/meals.dart';
 import 'package:meals_app/screens/main_drawer.dart';
 //import 'dart:developer';
-import 'package:meals_app/providers/meal_provider.dart';
+//import 'package:meals_app/providers/meal_provider.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:meals_app/providers/meal_provider.dart';
+//import 'package:meals_app/providers/meal_provider.dart';
 
 import '../providers/filters_provider.dart';
 
@@ -64,7 +64,7 @@ class _TabsScreenState extends ConsumerState<TabsScreen> {
     Navigator.of(context).pop();
     if (identifier == 'filters') {
       //ading a generic bracket to the push to specify what of values will be stored there
-      final result = await Navigator.of(context).push<Map<Filter, bool>>(
+      await Navigator.of(context).push<Map<Filter, bool>>(
         MaterialPageRoute(
           builder: (ctx) => FiltersScreen(),
           // currentFilters=: _selectedFilters,
@@ -82,31 +82,32 @@ class _TabsScreenState extends ConsumerState<TabsScreen> {
   @override
   Widget build(BuildContext context) {
     //using a riverpod provider where dummymeals is now stored
-    final meals = ref.watch(mealsProvider);
-    final avaliableMeals = meals.where(
-      //using a where function(meal) helps to check dynically in a list
-      //final avaliableMeals = dummyMeals.where(
-      (meal) {
-        // Filtering meals based on selected filters
-        // If the 'glutenFree' filter is enabled and the meal is not gluten-free, exclude it from the list
-        final activeFilters = ref.watch(filtersProvider);
-        if (activeFilters[Filter.glutenFree]! && !meal.isGlutenFree) {
-          return false;
-        }
-        if (activeFilters[Filter.LactoseFree]! && !meal.isLactoseFree) {
-          return false;
-        }
-        if (activeFilters[Filter.vegan]! && !meal.isVegan) {
-          return false;
-        }
-        if (activeFilters[Filter.Vegetarian]! && !meal.isVegetarian) {
-          return false;
-        }
-        return true;
-        //.toList() at the end of where() converts the filtered meals from an iterable to a list,
-        //making it more convenient to work with the data in various ways.
-      },
-    ).toList();
+    // final meals = ref.watch(mealsProvider);
+    // final avaliableMeals = meals.where(
+    //using a where function(meal) helps to check dynically in a list
+    //final avaliableMeals = dummyMeals.where(
+    //   (meal) {
+    //     // Filtering meals based on selected filters
+    //     // If the 'glutenFree' filter is enabled and the meal is not gluten-free, exclude it from the list
+    //     final activeFilters = ref.watch(filtersProvider);
+    //     if (activeFilters[Filter.glutenFree]! && !meal.isGlutenFree) {
+    //       return false;
+    //     }
+    //     if (activeFilters[Filter.LactoseFree]! && !meal.isLactoseFree) {
+    //       return false;
+    //     }
+    //     if (activeFilters[Filter.vegan]! && !meal.isVegan) {
+    //       return false;
+    //     }
+    //     if (activeFilters[Filter.Vegetarian]! && !meal.isVegetarian) {
+    //       return false;
+    //     }
+    //     return true;
+    //     //.toList() at the end of where() converts the filtered meals from an iterable to a list,
+    //     //making it more convenient to work with the data in various ways.
+    //   },
+    // ).toList();
+    final avaliableMeals = ref.watch(filteredMealsProvider);
     Widget activePage = CategoriesScreen(
       avaliableMeals: avaliableMeals,
     );
