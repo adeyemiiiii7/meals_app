@@ -29,6 +29,7 @@ class _CategoriesScreenState extends State<CategoriesScreen>
   // final void Function(Meal meal) onToggleFavourite;
 
   late AnimationController _animatorController;
+  @override
   void initState() {
     super.initState();
     _animatorController = AnimationController(
@@ -37,6 +38,7 @@ class _CategoriesScreenState extends State<CategoriesScreen>
       lowerBound: 0,
       upperBound: 1,
     );
+    _animatorController.forward();
   }
 
   @override
@@ -66,23 +68,29 @@ class _CategoriesScreenState extends State<CategoriesScreen>
     //     appBar: AppBar(
     //       title: const Text("Pick your category"),
     //     ),
-    return GridView(
-      padding: const EdgeInsets.all(24),
-      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 2,
-          childAspectRatio: 1.5,
-          crossAxisSpacing: 20,
-          mainAxisSpacing: 20),
-      children: [
-        for (final category in availableCategories)
-          CategoryGridItem(
-            category: category,
-            onselectCategory: () {
-              _selectCategory(context, category);
-            },
-            //  onselectCategory: () {},
-          )
-      ],
+    return AnimatedBuilder(
+      animation: _animatorController,
+      child: GridView(
+        padding: const EdgeInsets.all(24),
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2,
+            childAspectRatio: 1.5,
+            crossAxisSpacing: 20,
+            mainAxisSpacing: 20),
+        children: [
+          for (final category in availableCategories)
+            CategoryGridItem(
+              category: category,
+              onselectCategory: () {
+                _selectCategory(context, category);
+              },
+              //  onselectCategory: () {},
+            )
+        ],
+      ),
+      builder: (context, child) => Padding(
+          padding: EdgeInsets.only(top: 100 - _animatorController.value * 100),
+          child: child),
     );
   }
 }
