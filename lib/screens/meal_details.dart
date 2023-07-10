@@ -39,7 +39,11 @@ class MealDetails extends ConsumerWidget {
                       ? 'Meal added as a favourite'
                       : 'meal removed from favourite.')));
             },
-            icon: Icon(isFavourite ? Icons.star : Icons.star_border),
+            //icon: Icon(isFavourite ? Icons.star : Icons.star_border),
+            icon: AnimatedSwitcher(
+              duration: const Duration(milliseconds: 300),
+              child: Icon(isFavourite ? Icons.star : Icons.star_border),
+            ),
           ),
         ],
       ),
