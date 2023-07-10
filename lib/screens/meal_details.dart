@@ -45,7 +45,11 @@ class MealDetails extends ConsumerWidget {
               transitionBuilder: (child, animmation) {
                 return RotationTransition(turns: animmation, child: child);
               },
-              child: Icon(isFavourite ? Icons.star : Icons.star_border),
+              //add a key , a key is used to diffrentiate widgets of the same but diffrent data attached to them
+              child: Icon(
+                isFavourite ? Icons.star : Icons.star_border,
+                key: ValueKey(isFavourite),
+              ),
             ),
           ),
         ],
