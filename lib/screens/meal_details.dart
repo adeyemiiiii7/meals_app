@@ -45,7 +45,7 @@ class MealDetails extends ConsumerWidget {
               transitionBuilder: (child, animmation) {
                 return RotationTransition(
                   turns: Tween<double>(
-                    begin: 0.5,
+                    begin: 0.8,
                     end: 1,
                   ).animate(animmation),
                   child: child,
@@ -63,11 +63,14 @@ class MealDetails extends ConsumerWidget {
       ),
       body: ListView(
         children: [
-          Image.network(
-            meal.imageUrl,
-            height: 300,
-            width: double.infinity,
-            fit: BoxFit.cover,
+          Hero(
+            tag: meal.id,
+            child: Image.network(
+              meal.imageUrl,
+              height: 300,
+              width: double.infinity,
+              fit: BoxFit.cover,
+            ),
           ),
           const SizedBox(height: 14),
           Text(
