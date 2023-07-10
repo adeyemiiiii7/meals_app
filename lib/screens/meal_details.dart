@@ -4,7 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:meals_app/providers/favorites_provider.dart';
 
 import '../models/meal.dart';
-import 'package:meals_app/providers/meal_provider.dart';
+//import 'package:meals_app/providers/meal_provider.dart';
 
 class MealDetails extends ConsumerWidget {
   const MealDetails({
@@ -43,7 +43,14 @@ class MealDetails extends ConsumerWidget {
             icon: AnimatedSwitcher(
               duration: const Duration(milliseconds: 300),
               transitionBuilder: (child, animmation) {
-                return RotationTransition(turns: animmation, child: child);
+                return RotationTransition(
+                  turns: Tween<double>(
+                    begin: 0.5,
+                    end: 1,
+                  ).animate(animmation),
+                  child: child,
+                );
+                // return RotationTransition(turns: animmation, child: child);
               },
               //add a key , a key is used to diffrentiate widgets of the same but diffrent data attached to them
               child: Icon(
