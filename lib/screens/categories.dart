@@ -5,12 +5,50 @@ import 'package:meals_app/screens/meals.dart';
 
 import '../models/category.dart';
 import '../models/meal.dart';
+//import '../models/meal.dart';
 
-class CategoriesScreen extends StatelessWidget {
-  const CategoriesScreen({super.key});
+class CategoriesScreen extends StatefulWidget {
+  const CategoriesScreen(
+      {super.key,
+      //  required this.onToggleFavourite,
+      required this.avaliableMeals});
+
+  final List<Meal> avaliableMeals;
+
+  @override
+  State<CategoriesScreen> createState() => _CategoriesScreenState();
+}
+
+// State objects in Flutter represent the current state of a widget.
+// They hold data that can change over time and trigger a rebuild of the UI when the data changes.
+class _CategoriesScreenState extends State<CategoriesScreen>
+    with SingleTickerProviderStateMixin {
+  //extend with SingleTickerProviderStateMixin >= for only one animation controller
+  //extend with TickerProviderStateMixin >= for multiple animation x=controller
+  //your animation must be working with your sate object because it works behind the scene
+  // final void Function(Meal meal) onToggleFavourite;
+
+  late AnimationController _animatorController;
+  @override
+  void initState() {
+    super.initState();
+    _animatorController = AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: 300),
+      lowerBound: 0,
+      upperBound: 1,
+    );
+    _animatorController.forward();
+  }
+
+  @override
+  void dispose() {
+    _animatorController.dispose();
+    super.dispose();
+  }
 
   void _selectCategory(BuildContext context, Category category) {
-    final selectedMeals = dummyMeals
+    final selectedMeals = widget.avaliableMeals
         .where((meal) => meal.categories.contains(category.id))
         .toList();
 
@@ -26,27 +64,43 @@ class CategoriesScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: AppBar(
-          title: const Text("Pick your category"),
+    // return Scaffold(
+    //     appBar: AppBar(
+    //       title: const Text("Pick your category"),
+    //     ),
+    return AnimatedBuilder(
+      animation: _animatorController,
+      child: GridView(
+        padding: const EdgeInsets.all(24),
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2,
+            childAspectRatio: 1.5,
+            crossAxisSpacing: 20,
+            mainAxisSpacing: 20),
+        children: [
+          for (final category in availableCategories)
+            CategoryGridItem(
+              category: category,
+              onselectCategory: () {
+                _selectCategory(context, category);
+              },
+              //  onselectCategory: () {},
+            )
+        ],
+      ),
+      builder: (context, child) => SlideTransition(
+        position: //_animatorController.drive(
+            Tween(
+          begin: const Offset(0, 0.3), //0.3 = 30% down
+          end: const Offset(0, 0),
+        ).animate(
+          CurvedAnimation(parent: _animatorController, curve: Curves.easeInOut),
         ),
-        body: GridView(
-          padding: const EdgeInsets.all(24),
-          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 2,
-              childAspectRatio: 1.5,
-              crossAxisSpacing: 20,
-              mainAxisSpacing: 20),
-          children: [
-            for (final category in availableCategories)
-              CategoryGridItem(
-                category: category,
-                onselectCategory: () {
-                  _selectCategory(context, category);
-                },
-                //  onselectCategory: () {},
-              )
-          ],
-        ));
+        child: child,
+      ),
+    );
+    // Padding(
+    //      padding: EdgeInsets.only(top: 100 - _animatorController.value * 100),
+    //      child: child),
   }
 }

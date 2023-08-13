@@ -331,7 +331,7 @@ const dummyMeals = [
     ],
     isGlutenFree: true,
     isVegan: false,
-    isVegetarian: true,
+    isVegetarian: false,
     isLactoseFree: true,
   ),
   Meal(
@@ -374,7 +374,8 @@ const dummyMeals = [
     affordability: Affordability.affordable,
     complexity: Complexity.simple,
     duration: 45,
-    imageUrl: '',
+    imageUrl:
+        'https://www.foxvalleyfoodie.com/wp-content/uploads/2017/05/how-to-grill-brats.jpg',
     ingredients: [
       '6 bratwursts',
       '6 bratwurst buns',
@@ -544,7 +545,7 @@ const dummyMeals = [
     ],
     isGlutenFree: false,
     isVegan: true,
-    isVegetarian: true,
+    isVegetarian: false,
     isLactoseFree: true,
   ),
   Meal(

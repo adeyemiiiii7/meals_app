@@ -1,0 +1,222 @@
+[33mcommit bcd538bcb4fa63d9fd130ad0412833d7307b4713[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: adeyemiiiii7 <aladesuyiadeyemi05@gmail.com>
+Date:   Fri Jun 23 01:35:18 2023 -0400
+
+            modified:   meals_app
+
+[33mcommit 3ca6c45d0955da197f2de0b6cbc9aae7fe634c94[m
+Author: adeyemiiiii7 <aladesuyiadeyemi05@gmail.com>
+Date:   Fri Jun 23 01:02:31 2023 -0400
+
+            renamed:    lib/category_grid_item.dart -> lib/widgets/category_grid_item.dart
+            new file:   lib/widgets/meal_item.dart
+            modified:   meals_app
+
+[33mcommit f8bbb6a9843812e027075864cf7cf1de118fbbed[m
+Author: adeyemiiiii7 <aladesuyiadeyemi05@gmail.com>
+Date:   Fri Jun 23 00:43:00 2023 -0400
+
+    Changes to be committed:
+            modified:   lib/screens/categories.dart
+    
+    Changes not staged for commit:
+            modified:   meals_app (new commits)
+
+[33mcommit 50691c7cb8c2d088cd6a966989e169f28bc4476f[m
+Author: adeyemiiiii7 <aladesuyiadeyemi05@gmail.com>
+Date:   Fri Jun 23 00:24:52 2023 -0400
+
+            modified:   lib/screens/categories.dart
+            modified:   meals_app
+
+[33mcommit e12eb4cf96d237b4ec3dec81d9cc091258aa10dc[m
+Author: adeyemiiiii7 <aladesuyiadeyemi05@gmail.com>
+Date:   Fri Jun 23 00:04:16 2023 -0400
+
+            modified:   lib/screens/categories.dart
+
+[33mcommit a8249d0c65d414cdcab3c18a876649dc745124ce[m
+Author: adeyemiiiii7 <aladesuyiadeyemi05@gmail.com>
+Date:   Fri Jun 23 00:00:48 2023 -0400
+
+            modified:   lib/screens/categories.dart
+
+[33mcommit a253b556b36e2a07621c63027b1259277b563ba9[m
+Author: adeyemiiiii7 <aladesuyiadeyemi05@gmail.com>
+Date:   Thu Jun 22 23:46:05 2023 -0400
+
+            modified:   lib/category_grid_item.dart
+            modified:   lib/screens/categories.dart
+
+[33mcommit 07f9eb15fdd98d4570cfb819c3cbb068fb84ab04[m
+Author: adeyemiiiii7 <aladesuyiadeyemi05@gmail.com>
+Date:   Thu Jun 22 23:36:38 2023 -0400
+
+            modified:   lib/category_grid_item.dart
+            modified:   lib/screens/categories.dart
+
+[33mcommit 50aa6b0990f32dc8e3921947d1194e020195960d[m
+Author: adeyemiiiii7 <aladesuyiadeyemi05@gmail.com>
+Date:   Thu Jun 22 23:05:34 2023 -0400
+
+            modified:   lib/data/dummy_dart.dart
+            modified:   lib/main.dart
+            modified:   lib/screens/meals.dart
+
+[33mcommit 3582549dd3fac43efd78dd46879fdb16eac30448[m
+Author: adeyemiiiii7 <aladesuyiadeyemi05@gmail.com>
+Date:   Thu Jun 22 00:35:21 2023 -0400
+
+            modified:   lib/data/dummy_dart.dart
+
+[33mcommit 9accbf10a71bd128dc8e80e59074c531e0c9534b[m
+Author: adeyemiiiii7 <aladesuyiadeyemi05@gmail.com>
+Date:   Wed Jun 21 23:50:22 2023 -0400
+
+            modified:   lib/data/dummy_dart.dart
+
+[33mcommit a66b664f6f6c85a2d36f87bf095f47889e991a94[m
+Author: adeyemiiiii7 <aladesuyiadeyemi05@gmail.com>
+Date:   Wed Jun 21 22:09:59 2023 -0400
+
+            modified:   lib/data/dummy_dart.dart
+            modified:   lib/main.dart
+            modified:   lib/models/meal.dart
+
+[33mcommit a1ef652421f8864c7eb5d73bacc549c9c2cfe657[m
+Author: adeyemiiiii7 <aladesuyiadeyemi05@gmail.com>
+Date:   Wed Jun 21 18:54:19 2023 -0400
+
+            modified:   lib/category_grid_item.dart
+            new file:   lib/models/meal.dart
+            renamed:    lib/categories.dart -> lib/screens/categories.dart
+            new file:   lib/screens/meals.dart
+
+[33mcommit a00ca9e41f7cf0fddd254db1fc98cbf9ec96f326[m
+Author: adeyemiiiii7 <aladesuyiadeyemi05@gmail.com>
+Date:   Wed Jun 21 18:33:46 2023 -0400
+
+            new file:   assets/images/america.png
+
+[33mcommit 86b61977712900b62ef4d3283e22e500cd2cb6b5[m
+Author: adeyemiiiii7 <aladesuyiadeyemi05@gmail.com>
+Date:   Wed Jun 21 18:33:02 2023 -0400
+
+    Changes to be committed:
+            deleted:    assets/images/america.png
+    
+    Untracked files:
+            assets/images/america.png
+
+[33mcommit 3179581f406e552a539f22aad6c420b068d6b166[m
+Author: adeyemiiiii7 <aladesuyiadeyemi05@gmail.com>
+Date:   Wed Jun 21 18:31:34 2023 -0400
+
+            new file:   assets/images/america.png
+            new file:   assets/images/japan.png
+            new file:   assets/images/korea.png
+            new file:   assets/images/morocco.png
+            modified:   lib/categories.dart
+            modified:   lib/category_grid_item.dart
+            modified:   lib/data/dummy_dart.dart
+            modified:   lib/models/category.dart
+            modified:   pubspec.yaml
+
+[33mcommit a83d466b8511e96a9e1bc75d6508da3fc3870852[m
+Author: adeyemiiiii7 <aladesuyiadeyemi05@gmail.com>
+Date:   Tue Jun 20 09:45:26 2023 -0400
+
+            new file:   assets/images/british.png
+            new file:   assets/images/german.png
+            new file:   assets/images/hambuger.png
+            new file:   assets/images/indian.png
+            new file:   assets/images/italy.png
+            new file:   assets/images/mexican.png
+            new file:   assets/images/summer.png
+            modified:   lib/categories.dart
+            modified:   pubspec.yaml
+
+[33mcommit 014b46ca0ffa96c0825ae8109be8ecbbd781de1d[m
+Author: adeyemiiiii7 <aladesuyiadeyemi05@gmail.com>
+Date:   Tue Jun 20 01:52:54 2023 -0400
+
+            renamed:    assets/france.png -> assets/images/france.png
+            renamed:    assets/nigerian.png -> assets/images/nigerian.png
+            modified:   lib/categories.dart
+            modified:   lib/category_grid_item.dart
+            modified:   lib/data/dummy_dart.dart
+            modified:   test/widget_test.dart
+
+[33mcommit bf656f7de981710367aee4d88b8804a70bb34ee6[m
+Author: adeyemiiiii7 <aladesuyiadeyemi05@gmail.com>
+Date:   Tue Jun 20 01:05:03 2023 -0400
+
+    Changes to be committed:
+            new file:   assets/france.png
+            new file:   assets/nigerian.png
+            modified:   lib/categories.dart
+            modified:   lib/category_grid_item.dart
+            modified:   lib/data/dummy_dart.dart
+            modified:   lib/models/category.dart
+            modified:   pubspec.yaml
+
+[33mcommit 7c781c0d0bc633e2a94fc2c2ef2cb5d9dbfa2cca[m
+Author: adeyemiiiii7 <aladesuyiadeyemi05@gmail.com>
+Date:   Mon Jun 19 23:52:23 2023 -0400
+
+            modified:   lib/categories.dart
+            modified:   lib/main.dart
+
+[33mcommit 2652089407cd640d9137204711288db2fcb71426[m
+Author: adeyemiiiii7 <aladesuyiadeyemi05@gmail.com>
+Date:   Mon Jun 19 23:41:18 2023 -0400
+
+            new file:   lib/category_grid_item.dart
+    modified:   lib/data/dummy_dart.dart
+
+[33mcommit 0eeb85047992f3696da091d1901174a6c309528e[m
+Author: adeyemiiiii7 <aladesuyiadeyemi05@gmail.com>
+Date:   Mon Jun 19 23:07:28 2023 -0400
+
+            modified:   lib/categories.dart
+            new file:   lib/data/dummy_dart.dart
+            new file:   lib/models/category.dart
+
+[33mcommit ad508e20bd45e8ce9234329e907b79a26005c21e[m
+Author: adeyemiiiii7 <aladesuyiadeyemi05@gmail.com>
+Date:   Mon Jun 19 21:53:56 2023 -0400
+
+            renamed:    lib/.gitattributes -> .gitattributes
+
+[33mcommit acd61d8c4c54bb9b255f09100c781686758e9dc0[m
+Author: adeyemiiiii7 <aladesuyiadeyemi05@gmail.com>
+Date:   Mon Jun 19 21:51:46 2023 -0400
+
+            modified:   lib/main.dart
+
+[33mcommit 03f6e50e73a5b1c31135c8135134e1bf8fac5247[m
+Author: adeyemiiiii7 <aladesuyiadeyemi05@gmail.com>
+Date:   Mon Jun 19 21:47:12 2023 -0400
+
+            new file:   lib/.gitattributes
+
+[33mcommit 11bea0e71a18d7ad0bb3030e292950e7f9e2b480[m
+Author: adeyemiiiii7 <aladesuyiadeyemi05@gmail.com>
+Date:   Mon Jun 19 21:37:24 2023 -0400
+
+    origin main
+
+[33mcommit f812a503c4f20a253d2a6e6b45823c5c9e6e8671[m
+Author: adeyemiiiii7 <aladesuyiadeyemi05@gmail.com>
+Date:   Mon Jun 19 21:32:49 2023 -0400
+
+            new file:   .gitignore
+            new file:   .metadata
+            new file:   README.md
+            new file:   analysis_options.yaml
+            new file:   android/.gitignore
+            new file:   android/app/build.gradle
+            new file:   android/app/src/debug/AndroidManifest.xml
+            new file:   android/app/src/main/AndroidManifest.xml
+            new file:   android/app/src/main/kotlin/com/example/meals_app/MainActivity.kt
+            new file:   android/app/src/main/res/drawable-v21/l
